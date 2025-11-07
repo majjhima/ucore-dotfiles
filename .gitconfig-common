@@ -1,14 +1,12 @@
 [core]
     excludesfile = ~/.gitignore
-    editor = vim +0
+    editor = vi +0
     pager = less -FMRiX
 [color]
     ui = auto
     diff = auto
     status = auto
     branch = auto
-[merge]
-    tool = vimdiff
 [alias]
     di = diff --patience
     get-tracking-remote = !git config branch.$(git name-rev --name-only HEAD).remote | awk '{printf \"%s\", (($1 == \".\") ? \"\" : ($1 \"/\"))}'

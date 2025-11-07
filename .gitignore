@@ -5,6 +5,7 @@
 .devcontainer/.*Marker
 dotfiles/
 .dotnet/
+.gitconfig
 .gnupg/
 .java/
 .keychain/
