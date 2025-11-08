@@ -28,9 +28,6 @@
 [submodule ".vim/plugged/restore_view.vim"]
 	path = .vim/plugged/restore_view.vim
 	url = https://github.com/vim-scripts/restore_view.vim.git
-[submodule ".vim/plugged/sessionman.vim"]
-	path = .vim/plugged/sessionman.vim
-	url = https://github.com/vim-scripts/sessionman.vim.git
 [submodule ".vim/plugged/SudoEdit.vim"]
 	path = .vim/plugged/SudoEdit.vim
 	url = https://github.com/chrisbra/SudoEdit.vim.git

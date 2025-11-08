@@ -84,11 +84,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'tpope/vim-haml'
 
 " Sudo support
-if v:version >= 701 || v:version == 700 && has('patch111')
-  Plug 'chrisbra/SudoEdit.vim'
-else
-  "Plug 'sudo.vim'
-endif
+Plug 'chrisbra/SudoEdit.vim'
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" && bufname("") !~ "^sudo:" | lcd %:p:h | endif
 
 " All of your Plugins must be added before the following line
@@ -224,7 +220,7 @@ if has('statusline')
 endif
 
 let g:airline_theme='badwolf'
-unlet g:airline_powerline_fonts
+"unlet g:airline_powerline_fonts
 let g:airline_left_sep = '»'
 let g:airline_right_sep = '«'
 let g:airline_linecolumn_prefix = '¶ '
@@ -447,3 +443,38 @@ let g:AutoPairsShortcutJump = '<C-n>'
 set formatoptions=crql
 
 set t_kb=
+
+" Initialize directories {
+function! InitializeDirectories()
+    let parent = $HOME
+    let prefix = 'vim'
+    let dir_list = {
+                \ 'backup': 'backupdir',
+                \ 'views': 'viewdir',
+                \ 'swap': 'directory' }
+
+    if has('persistent_undo')
+        let dir_list['undo'] = 'undodir'
+    endif
+
+    let common_dir = parent . '/.' . prefix
+
+    for [dirname, settingname] in items(dir_list)
+        let directory = common_dir . dirname . '/'
+        if exists("*mkdir")
+            if !isdirectory(directory)
+                call mkdir(directory)
+            endif
+        endif
+        if !isdirectory(directory)
+            echo "Warning: Unable to create backup directory: " . directory
+            echo "Try: mkdir -p " . directory
+        else
+            let directory = substitute(directory, " ", "\\\\ ", "g")
+            exec "set " . settingname . "=" . directory
+        endif
+    endfor
+endfunction
+" }
+
+call InitializeDirectories()
