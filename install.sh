@@ -41,5 +41,8 @@ else
   exit 1
 fi
 
+# Create aws config directory for bind mountig with host
+mkdir -p "$HOME/.aws"
+
 # Start a detached tmux session
 tmux new -s vscode -d
