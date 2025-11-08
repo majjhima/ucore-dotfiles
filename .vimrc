@@ -125,7 +125,7 @@ set mousehide               " Hide the mouse cursor while typing
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set virtualedit=block
-set spell                   " Spell checking on
+"set spell                   " Spell checking on
 set hidden                  " Allow buffer switching without saving
 set cursorline              " Highlight current line
 highlight clear SignColumn  " SignColumn should match background for things like vim-gitgutter
