@@ -7,7 +7,8 @@
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-		"ghcr.io/guiyomh/features/vim": { }
+		"ghcr.io/guiyomh/features/vim": { },
+		"ghcr.io/devcontainers-extra/features/tmux-apt-get": { }
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
