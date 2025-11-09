@@ -53,3 +53,14 @@ fi
 
 # automatically remove duplicates from these arrays
 typeset -U path cdpath fpath manpath
+
+# Cache our active SSH_AUTH_SOCK as a symlink.
+# This is particularly useful from a long-running tmux window.
+if [[ -S "$SSH_AUTH_SOCK" && ! -L "$SSH_AUTH_SOCK" ]]
+then
+    ln -sf $SSH_AUTH_SOCK $HOME/.ssh/.ssh-agent-socket
+fi
+if [[ -S $(readlink $HOME/.ssh/.ssh-agent-socket) ]]
+then
+    export SSH_AUTH_SOCK=$HOME/.ssh/.ssh-agent-socket
+fi
