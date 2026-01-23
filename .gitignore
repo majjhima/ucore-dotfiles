@@ -2,6 +2,7 @@
 .aws/
 .bash*
 .cache/
+.claude*
 .config/
 .devcontainer/.*Marker
 dotfiles/
@@ -12,6 +13,7 @@ dotfiles/
 .keychain/
 .lesshst
 .local/
+.npm/
 .oh-my-zsh/
 .profile
 .ssh/

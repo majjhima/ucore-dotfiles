@@ -45,6 +45,28 @@ for alias in $HOME/.aliases*(N) ; do
     source $alias
 done
 
+# add home based bin directories to path here
+# to take precedence over system zshrc config
+if [ -d "$HOME/local/bin" ] ; then
+    PATH="$HOME/local/bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# link the scalar and array variables with auto exporting
+if [ -n "$LD_LIBRARY_PATH" ] ; then
+    typeset -xT LD_LIBRARY_PATH ld_library_path
+    typeset -U ld_library_path
+fi
+
+# automatically remove duplicates from these arrays
+typeset -U path cdpath fpath manpath
 
 #Prompt Color Table Z shell
 fg_black="%{"$'\e[00;30m'"%}"
