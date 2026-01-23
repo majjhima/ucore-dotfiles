@@ -1,12 +1,14 @@
 .*~
 .aws/
 .bash*
+.bun/
 .cache/
 .claude*
 .config/
 .devcontainer/.*Marker
 dotfiles/
 .dotnet/
+.gemini
 .gitconfig
 .gnupg/
 .java/
