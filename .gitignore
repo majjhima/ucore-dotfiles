@@ -1,6 +1,9 @@
 .*~
+a0/usr
+archive/
 .aws/
 .bash*
+!.bashrc
 .bun/
 .cache/
 .claude*
@@ -8,11 +11,13 @@
 .devcontainer/.*Marker
 dotfiles/
 .dotnet/
+**/.env
 .gemini
 .gitconfig
 .gnupg/
 .java/
 .keychain/
+.kilocode/
 .lesshst
 .local/
 .npm/

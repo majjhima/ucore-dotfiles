@@ -1,0 +1,11 @@
+services:
+  agent-zero:
+    container_name: agent-zero
+    image: agent0ai/agent-zero:latest
+    env_file:
+      - .env
+    volumes:
+      - ./usr:/a0/usr:Z
+    ports:
+      - "50080:80"
+      - "50022:22"

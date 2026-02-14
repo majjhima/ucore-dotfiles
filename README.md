@@ -1,2 +1,2 @@
-# devcontainers-dotfiles
-Home directory dotfiles for VSCode devcontainers with simplicity in mind.
+# ucore-dotfiles
+Home directory dotfiles for uCore development server with simplicity in mind.

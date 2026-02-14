@@ -100,6 +100,15 @@ export RPROMPT=""
 if [ -z "$HOST_ALIAS" ] ; then
     HOST_ALIAS='%2m'
 fi
+if [ -n "$CONTAINER_ID" ] ; then
+    HOST_ALIAS="$CONTAINER_ID📦"
+
+    # Only setup NVM and Node in a container
+    export NVM_DIR="$HOME/.config/nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
 export PROMPT="${fg_magenta}[%D{%F %T %Z}]
 %(!.${fg_red}.${fg_green})%n@${HOST_ALIAS}: ${fg_yellow}%~
 ${at_normal}%# "
