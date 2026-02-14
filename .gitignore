@@ -13,6 +13,7 @@ dotfiles/
 .dotnet/
 **/.env
 .gemini
+git/
 .gitconfig
 .gnupg/
 .java/
