@@ -1,10 +1,5 @@
 # .bashrc
 
-# Use zsh by default if installed
-if command -v zsh >/dev/null 2>&1; then
-    exec zsh
-fi
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
@@ -28,4 +23,3 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
-
