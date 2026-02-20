@@ -7,5 +7,7 @@ services:
     volumes:
       - ./usr:/a0/usr:Z
     ports:
-      - "50080:80"
       - "50022:22"
+      - "50080:80"
+      - "50180:8080"
+    restart: always

@@ -1,0 +1,16 @@
+[Container]
+ContainerName=agent-zero
+EnvironmentFile=/home/core/a0/.env
+Image=docker.io/agent0ai/agent-zero:latest
+PublishPort=50022:22
+PublishPort=50080:80
+PublishPort=50180:8080
+SecurityLabelDisable=true
+Volume=/home/core/a0/.ssh:/root/.ssh
+Volume=/home/core/a0/usr:/a0/usr
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
