@@ -10,6 +10,7 @@
 /.claude*
 /.config/
 /.devcontainer/.*Marker
+/.docker/
 /dotfiles/
 /.dotnet/
 **/.env
