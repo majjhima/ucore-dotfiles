@@ -1,14 +1,11 @@
-#!/bin/sh
+#!/bin/bash
+set -ex
 
 # Get the directory of the script
 SCRIPT_DIR=$(dirname "$(realpath "$0")")
 
 # Copy dotfiles
 rsync -av "$SCRIPT_DIR/" "$HOME/"
-
-# Initialize submodules
-cd $HOME
-git submodule update --init --recursive
 
 # Create .gitconfig
 cat << EOF > .gitconfig
